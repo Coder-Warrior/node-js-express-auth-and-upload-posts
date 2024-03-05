@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1><%- currentUser[0].name; -%></h1>
+        <a href="/signout">Sign Out</a>
+    </header>
+    <nav>
+        <a href="/addpost" style="color: black;">AddPost</a>
+    </nav>
+    <form action="/search" method="post" class="search">
+        <input type="text" name="username" placeholder="Search for post">
+    </form>
+    <div class="posts">
+        <ul class="posts-ul">
+
+            <% if (currentUser[1].length === 0) { %>
+
+                <% currentUser[0].posts.forEach(function (doc) { %>
+                    <li><div>
+                      <div class="columny" style="display: flex; flex-direction: column; height: fit-content; width: fit-content; background-color: transparent; margin-top: -25px">
+                          <h3 style="font-size: 25px;">
+                              <%= doc.postName %>
+                              </h3>
+                              <h4 style="font-size: 18px;">
+                              <%= doc.postTitle %>
+                              </h4>
+                      </div>
+                      <a href="/editpost/<%= doc.id %>" style="color: black">editPost</a>
+                      <a href="/deletepost/<%= doc.id %>" style="color: black">deletePost</a>
+                      
+                  </div></li>
+                  <% }); %>
+
+            <% } else { %>
+
+                <% currentUser[1].forEach(function (doc) { %>
+                    <li><div>
+                      <div class="columny" style="display: flex; flex-direction: column; height: fit-content; width: fit-content; background-color: transparent; margin-top: -25px">
+                          <h3 style="font-size: 25px;">
+                              <%= doc.postName %>
+                              </h3>
+                              <h4 style="font-size: 18px;">
+                              <%= doc.postTitle %>
+                              </h4>
+                      </div>
+                      <a href="/editpost/<%= doc.id %>" style="color: black">editPost</a>
+                      <a href="/deletepost/<%= doc.id %>" style="color: black">deletePost</a>
+                      
+                  </div></li>
+                  <% }); %>
+
+            <% } %>
+
+          </ul>
+    </div>
+</body>
+</html>

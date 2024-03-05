@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="signup-body">
+    <form action="/editpost/<%= post.id %>" method="POST" class="signup-form">
+        <input type="text" name="postName" placeholder="Edit Your postName" value="<%= post.postName %>"><br>
+        <p class="postNameError"></p>
+        <input type="text" name="postTitle" placeholder="Edit Your postTitle" value="<%= post.postTitle %>"><br>
+        <p class="postTitleError"></p>
+        <input type="submit" value="SUBMIT">
+    </form>
+</body>
+</html>
+

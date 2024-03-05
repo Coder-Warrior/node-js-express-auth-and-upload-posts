@@ -1,0 +1,131 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+};
+
+*ul {
+    list-style: none !important;
+    list-style-type: none !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+.signup-body,
+.login-body {
+    background-image: linear-gradient(90deg, white 50%, black 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 884px;
+}
+
+.signup-form,
+.login-form {
+    background-color: #777;
+    height: 50%;
+    width: 50%;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-form input,
+.login-form input {
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.signup-form p,
+.login-form p {
+    position: relative;
+    bottom: 15px;
+    color: red;
+}
+
+a {
+    color: white;
+    margin-top: 15px;
+}
+
+header {
+    margin: 25px 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header a {
+    color: black;
+    font-size: 20;
+}
+
+.posts {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.posts-ul li div a {
+    margin: 0;
+    padding: 0;
+}
+
+.posts-ul  {
+    width: 80%;
+    list-style: none;
+}
+
+.posts-ul li div {
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    background-color: rgb(84, 108, 129);
+    height: 200px;
+    width: 100%;
+    border-radius: 7px;
+}
+
+@media (max-width: 500px) {
+    .posts-ul li div {
+        flex-direction: column;
+        align-items: center;
+    };
+}
+
+.posts-ul li {
+    margin-bottom: 25px;
+}
+
+@media (max-width: 430px) {
+    .signup-form,
+    .login-form {
+    width: 80%;
+    }
+}
+
+.search {
+    position: absolute;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+}
+
+.search input {
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    padding: 10px;
+    
+}
